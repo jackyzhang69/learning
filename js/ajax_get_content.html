@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <h2>The XMLHttpRequest</h2>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo1').innerHTML = Date()"
+    >
+      Click me to display Date and Time.
+    </button>
+
+    <p id="demo1"></p>
+
+    <p id="demo">Let AJAX change this text</p>
+    <button type="button" onclick="loadDoc()">Change the content</button>
+
+    <script>
+      function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        
+        xhttp.open("GET", "a.html", true);
+        xhttp.send();
+        
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

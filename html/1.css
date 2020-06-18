@@ -1,0 +1,62 @@
+body {
+    font-size: larger;
+}
+.general {
+    color:red;
+}
+p {
+    background-color: bisque;
+    color: coral;
+}
+span{
+    background-color: cornflowerblue;
+    color: darkblue;
+}
+#unique {
+    color: darkgoldenrod;
+    background-color: darkblue;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    text-decoration: blink;
+}
+h1,h2,h3 {
+    color:red;
+    background-color: black;
+    text-align: center;
+}
+.center {text-align: center;}
+.black {color: black;}
+.fancy td {
+    color: white;
+    background-color:blue;
+}
+table {border-spacing: 10px;}
+table, th,td {border: 1px solid green;border-collapse: collapse;border-spacing: 120px 120px;}
+table.fancy {
+    color: crimson;
+}
+[title~=Jacky] {
+    color:brown;
+    font-size: xx-large;
+}
+[title|=Jacky]{
+    font-size: xx-small;
+}
+
+input[type="text"] {
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    background-color: cornflowerblue;
+    color: crimson;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+a {text-decoration: none;}
+a:link {color:blue;background-color: silver;}
+a:visited {color:gray;background-color: tomato;}
+a:hover {color:green;background-color: yellow;}
+a:active {color:red}
+
+ul li {list-style-image: url('obama.jpg') ;}

@@ -1,0 +1,28 @@
+1. 服务器端，需要配置 /dev/mongd.conf 
+	1. 开放端口 27017
+	2. Authorization-> enabled
+	3. Ipbind: 0.0.0.0
+	
+2. 数据库中需要创建用户，并授予权限
+	db.createUser({user:"jackson",pwd:"990731",roles:[{role:"dbAdmin",db:"test"}]})
+	jacksong是创建的用户名，990731是密码，dbAdmin是角色，test是具体哪个数据库。
+	
+3. 在服务器，可以用mongo shell访问： 
+	mogo 192.168.0.14:27017/test -u dan -p 100626 这个有具体的权限
+	如果不带用户和密码输入，也可以进去，但做不了申请
+
+4.在客户端 （Pymongo）
+
+
+from pymongo import MongoClient  # 如果Pymongo没有装，需要pip install pymongo即可
+
+client = MongoClient("mongodb://jackson:990731@192.168.0.14:27017/test")
+#格式：url="mongodb://数据库用户名:密码@主机IP地址：端口/数据库名称“
+
+client.list_database_names()
+#执行命令
+
+
+reference:
+https://blog.csdn.net/qq_33643072/article/details/81482451
+

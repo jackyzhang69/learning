@@ -1,0 +1,55 @@
+
+        h1 {
+            background-color: purple;
+            border: 3px solid goldenrod;
+            color: gold;
+            text-decoration: underline overline;
+        }
+        h2 {
+            background-color: purple;
+            color: gold;
+            text-decoration: line-through;
+        }
+
+        body{
+            color:green;
+            background-color: #ffcf79;
+            font-family: Verdana,Arial,geneva,Arial Black;
+            font-weight: normal;
+        }
+        p{
+            background-color: darkgoldenrod;
+            color: black;
+            font-size: 16px;
+        }
+        <!--定义green为一个Class -->
+
+        .green{
+            color: green;
+            font-size: 16px;
+
+        }
+
+            <!-- 定义任何里面的class -->
+
+        .get_blue{
+            color: blue;
+        }
+        .underline{
+            text-decoration: underline;
+            color: goldenrod;
+        }
+
+        p.para1{
+            color: blue;
+            font-size: 25px;
+        }
+        p.para2 {
+            color: purple;
+            font-size: 25px;
+        }
+        p.para3{
+            color: purple;
+            font-size: 25px;
+            font-style: italic;
+        }

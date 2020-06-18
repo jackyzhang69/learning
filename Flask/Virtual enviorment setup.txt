@@ -1,0 +1,68 @@
+虚拟环境及Flask的安装
+
+# check virtualenv version
+
+virtualenv --version
+
+# install virtualenv
+
+sudo pip3 install virtualenv
+sudo pip3 install virtualenvwrapper
+
+# create virtual enviorment (must be online)
+
+mkvirtualenv flask_py  # 以Flask为例
+
+# if cannto find mkvirtualenv , must config the enviorment varies  Linux下面安装
+#1 创建目录来放置虚拟环境
+mkdir $HOME/.virtualenvs
+#2 打开~/.bashrc文件，并添加如下：
+export WORKON_HOME=$HOME/.virtualenvs
+source /user/local/bin/virtualenvwrapper.sh
+#3 运行
+source ~/.bashrc
+
+# 虚拟环境建立好后，会自动转到虚拟环境下，安装的东西都会在虚拟环境的目录里
+# 安装flask 
+pip3 install flask
+
+#Pycharm 里面配置虚拟环境， 选择解析器
+setting->project interpreter->setup按钮->添加本地->选择虚拟环境
+
+windows里面： 直接在virtualenv安装好后 运行 virtualenv xxxx 即可创建xxxx的虚拟环境。
+然后选择xxxx目录下 \Scripts\activate 激活后就进入虚拟环境了 （cmd下面运行，powershell不行）
+离开虚拟环境，deactivate
+
+
+requirements 文件
+Python项目中必须包含一个requirements.txt文件，用于记录所有依赖包及其准确的版本号，一遍在新环境中进行部署操作。
+
+在虚拟环境中，通过以下命令将当前虚拟环境中的依赖包和版本号生成到文件中：
+pip freeze->requirements.txt
+
+把该文件copy到新的环境项目后，用这个命令安装依赖包：
+pip install -r requirements.txt
+
+
+创建项目
+1. 在自己想要保存代码的目录，输入：django-admin startproject xxxx  创建一个项目
+2. 数据库建立（如果不是默认的sqlite3，需要配置）， 然后运行 python manage.py migrate 就创建好项目的数据库
+3. 开发服务器 到项目目录下运行： python  manage.py runserver 8080 启动后会告诉你： Starting development server at http://127.0.0.1:8080/
+4. 通过浏览器访问http://127.0.0.1:8080/ 看到Django界面 表示服务器成功。
+	如果想让局域网内的用户都看到，需要设置setting.py里面，ALLOWED_HOSTS=['192.168.0.12'] 本机地址写上
+	运行： python manage.py runserver 0.0.0.0:8000
+	这种情况下，任何一台机器访问网站 都是通过192.168.0.12:8000来访问
+
+5. python manage.py startapp xxxx 通过这个命令 创建一个app
+6. 在app中的models.py中，创建模型 classes（非常重要，是核心内容，数据结构和数据库的源头）
+7. 激活模型，到mysite中，编辑setting.py 把创建的应用放到INSTALLED_APPS中去。 
+8. 创建迁移文件： python manage.py makemigrations polls 为这个app创建迁移文件
+	中间出了点问题， 教材上的资料有点老，question = models.ForeignKey(Question, on_delete=models.CASCADE,) 这句必须加上on_delete=.... 这个变量
+9. 执行迁移文件（执行迁移文件中的构件数据库语句），生成数据库。 在pycharm中就可以看到。 （如果pycharm中没有database broswer，在搜素后seeting中 下载plugin）
+10. 进入python shell来调用根据我们模型生成的API。 python manage.py shell
+
+11. 创建Superuser:　python manage.py createsuperuser　然后进入 http://127.0.0.1:8000/admin/
+12. 让应用在管理站点中可编辑 到polls/admin.py中编辑
+
+
+

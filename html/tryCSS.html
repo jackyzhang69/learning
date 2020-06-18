@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning CSS</title>
+    <style>
+        h1,h2 {
+            background-color: purple;
+            border: 3px solid goldenrod;
+            color: gold;
+        }
+        body{
+            color:green;
+            font-family: Verdana,Arial,geneva,Arial Black;
+            font-weight: normal;
+        }
+        p{
+            background-color: darkgoldenrod;
+            color: black;
+            font-size: 16px;
+        }
+        <!--定义green为一个Class -->
+
+        .green{
+            color: green;
+            font-size: 16px;
+
+        }
+
+            <!-- 定义任何里面的class -->
+
+        .get_blue{
+            color: blue;
+        }
+        .underline{
+            text-decoration: underline;
+            color: goldenrod;
+        }
+
+    </style>
+</head>
+<body>
+<h1>The Fish Website</h1>
+<p>Welcome to the Fish Web Site. Everything you want to know about fish is in this website</p>
+<h2 class="underline">This is a section on Bass fish</h2>
+<p>Bass fish live in lakes</p>
+
+<!-- 修改局部paragraph-->
+<p class="green"> This is changed</p>
+<!--修改局部中的局部-->
+<blockquote class="underline">Hi Dan</blockquote>
+<blockquote class="get_blue">Hi Jackson</blockquote>
+
+
+
+
+</body>
+</html>

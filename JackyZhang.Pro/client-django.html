@@ -1,0 +1,35 @@
+{% extends "client/base.html" %}
+{% block content %}
+    <h3>Create/Search a client </h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for='first_name'>Frist Name</label>
+        <input type="text" name="first_name"/><br/>
+        <label for='last_name'>Last Name</label>
+        <input type="text" name="last_name"/><br/>
+
+        Sex :
+        <select>
+            <option value=False>Male</option>
+            <option value=True>Female</option>
+        </select><br>
+
+        <label for='dob'>Date of Birth</label>
+        <input type="text" name="dob"/><br/>
+
+
+        <input type="submit" name='create' value="Create"/>
+        <input type="submit" name='search' value="Search"/>
+    </form>
+
+
+    
+    {% for person in persons %}
+        <ul>
+            <li><a href="{{ person.id }}/">{{ person.first_name }} {{ person.last_name }} </a>DOB:{{ person.DOB }}
+            </li>
+        </ul>
+    {% endfor %}
+
+
+{% endblock content %}

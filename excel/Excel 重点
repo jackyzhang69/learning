@@ -1,0 +1,25 @@
+# 读取现有文件数据
+from openpyxl import load_workbook
+wb = load_workbook(filename='C:\\Users\\jacky\\Future\\Policies&Data\\Utils\\NOC Based Wage 2019.xlsx')
+sheet = wb.active
+count = sheet.max_row
+
+for row in range(2, count + 1):
+noc.title = sheet.cell(row, 2).value  # 读取每个cell的数据
+noc.level = sheet.cell(row, 3).value
+
+# 写入数据到新文件
+from openpyxl import Workbook
+
+    wb = Workbook()
+    ws = wb.active # 注意 这个不是函数 不能用（）
+
+    str1 = "https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=122372&CVD=122376&CPV="
+    str2 = "&CST=01012011&CLV=4&MLV=4"
+    noc_list = Noc.objects.all()
+    r = 1
+    for noc in noc_list:
+        url = str1 + noc.noc + str2
+        ws.cell(row=r, column=1).value = url
+        r += 1
+    wb.save('noc urls.xlsx')

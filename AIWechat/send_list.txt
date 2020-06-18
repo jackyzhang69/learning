@@ -1,0 +1,5 @@
+NickName,RemarkName,Group
+我自己,我自己,True
+Myself,Myself,True
+张向阳,Jacky Zhang,False
+大家一起跟我聊天,大家一起跟我聊天,True

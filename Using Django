@@ -1,0 +1,58 @@
+
+你可以从模型的管理器那里取得查询集。每个模型都至少有一个管理器，它默认命名为objects。通过模型类来直接访问它，像这样：
+
+>>> Blog.objects
+<django.db.models.manager.Manager object at ...>
+>>> b = Blog(name='Foo', tagline='Bar')
+>>> b.objects
+Traceback:
+    ...
+AttributeError: "Manager isn't accessible via Blog instances."
+注
+
+管理器只可以通过模型的类访问，而不可以通过模型的实例访问，目的是为了强制区分“表级别”的操作和“记录级别”的操作。
+
+对于一个模型来说，管理器是查询集的主要来源。例如，Blog.objects.all() 返回包含数据库中所有Blog 对象的一个查询集。
+
+I 获取表信息
+1. 获取某一条件下的对象列表
+    nocs=Noc.objects.filter(noc__contains='2174')  # nocs是一个列表 从Noc类的对象管理器objects那里，通过过滤条件noc包含2174
+    来查询所有的NOC代码，事实上就返回一个，因为noc是unique的字段。 引用的话 可以用nocs[0]直接作为对象来处理就可以。
+    注意： noc__contains 是Django API自定义的，根据是主表的字段noc加上双下划线__，加上动词，比如contains, startswith。。。 后面跟= 然后
+    跟搜索条件。
+2 获取一个对象
+    noc=Noc.objects.get(id=94028)  确定id的时候，获得特定某个noc对象。
+3. 获取全部信息
+    nocs=Noc.objects.all()
+4. 另外一张子表NocWage的处理也一样
+    nws=NocWage.objects.all()
+    nws=NocWage.objects.filter(prov__contains='BC')
+    nw=NocWage.objects.get(id=86031)
+
+主表获取子表信息
+    noc=Noc.objects.get(id=94028) 先获得一个noc的对象
+    1. 获取所有信息
+    noc.nocwage_set.all() 获取该noc对象包含的所有nocwage的信息 （此处nocwage是小写，加一个下划线_set， 这是Django根据models自定义的API）
+    2. 获取某类信息
+    nws=NocWage.objects.filter(noc__noc__startswith='2175')  从子表中获得noc代码为2175的所有地区和工资信息。 此处第一个noc是Noc类
+    的名字，改成小写,加上双下划线__ 后面的noc是Noc类里面noc字段的名字 后面跟双下划线__ 加startswith,或者contains等判断，后接= 条件
+
+从子表中获取主表信息
+    nw=NocWage.objects.get(id=86031) 获取一个nocwage对象
+    n=nw.noc 获得其主表noc信息
+    id=nw.noc_id 获得主表id信息
+
+增：
+    n=Noc()
+    n.noc='2175'
+    n.save()
+删： n.delete()
+改： n.noc='2174'
+    n.save()
+查： see above
+
+5. 从template如何向views里面的函数传参数
+在url.py里面定义路径，加个（），就当成参数传到views里面的函数
+#   url(r'^(\d+)/$',views.solution,name='solution'),
+# (\d+) is the second parameter (request is the first)
+# if more, can do like this to pass to view functions. (\d+) /(\d+)

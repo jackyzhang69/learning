@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<body>
+<head>
+    <!__ this is comment -->
+
+    <title>Jacky's site</title>
+    <!__ meta 很重要，不显示网页数据，但是提供给搜索引擎信息 -->
+    <meta name="description" content="This is a web page about immigration Canada.
+    We provide full spectrum of services in terms of immigrating to Canada ">
+    <meta name="keywords" content="Canada,immigration,visa,study permit, work permit,permanent resident">
+    <meta http-equiv="author" content="Jacky Zhang">
+    <meta http-equiv="content-language" content="en-us">
+
+</head>
+<p>
+<h1><a href="https://en.wikipedia.org/wiki/Ronaldo_(Brazilian_footballer)">Ronald</a></h1>
+<h2>History</h2>
+<ol>
+    <li>Born</li>
+    <li>Grow up</li>
+    <li>Mature</li>
+</ol>
+<h2>Achievement</h2>
+<ol>
+    <li>Olympic gold</li>
+    <li>Asia championship</li>
+</ol>
+<h3>
+    <bold>Anything else</bold>
+</h3>
+<ul>
+    <li>
+        <bold>Ask me</bold>
+    </li>
+</ul>
+
+</p>
+<p>
+<table>
+    <tr>
+        <th>The Planet</th>
+        <th>Ocearns</th>
+        <th>The deserts</th>
+    </tr>
+    <tr>
+        <td>Earth</td>
+        <td>Pacific</td>
+        <td>Sahara</td>
+    </tr>
+    <tr>
+        <td>Moon</td>
+        <td>Atlantic</td>
+        <td>Gobi</td>
+    </tr>
+</table>
+</p>
+
+<p>
+    Please click the link
+    <a href="https://www.youtube.com/watch?v=U4UHoiK6Oo4&list=PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB&index=6">Youtube</a>
+</p>
+<p>
+<li><a href="#Birds">Birds section</a></li>
+<li><a href="#Ducks">Ducks section</a></li>
+</p>
+
+
+<img> <img src="../obama.jpg" width="200" height="150"> </p>
+
+<! Form>
+<form action="Post" method="">
+
+    <label for='first_name'>Frist Name</label>
+    <input type="text" name="first_name    " size="10"></input><br>
+    <label for='last_name'>Last Name</label>
+    <input type="text" name="last_name " size="10"></input><br>
+
+    Comments:<br>
+    <textarea rows="5" cols="20"></textarea><br>
+    <input type="Submit" value="Save"><br>
+
+    Yes:
+    <input type="radio" name='yesorno' value=''><br>
+    No:
+    <input type="radio" name='yesorno' value=''><br>
+
+    Which choice do you choose?<br>
+    <input type="checkbox" name="" checked="'checked">Football<br>
+    <input type="checkbox" name="">Basketball<br>
+    <input type="checkbox" name="">Baseball<br>
+    <input type="checkbox" name="">Hocky<br>
+
+
+    <fieldset >
+        <legend>Tell me more about yourself</legend>
+    How much money do you earn?<br>
+    <input type="number" name="salary" min="0" max="10"> <br>
+
+    Choose the region you are living in:<br>
+    <select>
+        <option value="Michigan">Michigan</option>
+        <option value="Alabama">Alabama</option>
+        <option value="Vancouver">Vancouver</option>
+    </select>
+    <br>
+    Enter day you want to travel to Cancun:<br>
+    <input type="date" name="day">
+    Number of days: <input type="number" name="numdays" min="1" max="10"><br>
+
+    <br>
+    Name:<input type="text">
+
+    </fieldset>
+
+    <p>
+    <a name="Birds">This is birds section</a><br>
+    <a name="Ducks">This is ducks section</a>
+    </p>
+    <p>Hi good morning, this is Macdonald &#8482 &copy. &lt haha &gt &#63 </p> <!-- &#8482  &copy Escape characters-->
+</form>
+
+<!--修饰 -->
+<p>This is <b>bold element</b></p>
+<p>This is <strong>strong element</strong></p>
+<p>This is <i>italic element<i/></p>
+<p>This is a <em>em element</em></p>  <!-- 优选strong和em, 除了visual之外，读的时候都有强调，包括盲文 -->
+
+<iframe frameborder="1" width="200" height="200" src="default.html" name="ouriframe" id="ouriframe">
+</iframe><br>
+<a href="second.html" target="ouriframe">See second one</a>
+<a href="default.html" target="ouriframe">See first one</a>
+<p>This is sup example: August 23<sup>rd</sup></p>
+<p>This is sub example: H<sub>2</sub>O</p>
+
+<img src="obama1.jpg" title="Barak Obama" alt="Barak Obama">  <!-- this is title attribute, alt是在图片出错的情况下，用某句话代替-->
+<br>
+<audio controls autoplay loop><source src="Civil War.mp3"></audio>
+<video width="640" height="360" controls > <source src="Lego.mp4"></video>
+Email: <input type="email" name="user_email" />
+<input type="submit"/>
+Homepage: <input type="url" name="home_page"/>
+<input type="submit"/>
+<input type="date" id='dob' name="dob"/>
+<p id="test_date">Now is me</p>
+<button onclick="show">click me</button>
+
+select file: <input type="file" name="img" />
+
+
+</body>
+</html>

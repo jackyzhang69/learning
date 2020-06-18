@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Try url </title>
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+    <h1>URL Object</Object>
+    </h1>
+
+    <ul class="summary">
+        <li>Super useful and gareat to knwo about!</li>
+        <li>allows you to read and modify components of a URL</li>
+        <li>can be used in conjunction with <code>fetch()</code></li>
+    </ul>
+    <div>
+        <p></p>
+        <a href="#">click me</a>
+        <div></div>
+    </div>
+
+    <button onclick="doit()">Try</button>
+    <script>
+        function doit() {
+             $("div p").load('client.html'); // 这个很厉害，很方便
+             $("div").load("127.0.0.1:5500/client.html"); //看来异域的还真是不行. 需要用selenium来解决
+             $("div div").text("THis is second div");
+        }
+    </script>
+
+
+</body>
+
+</html>

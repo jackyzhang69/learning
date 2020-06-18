@@ -1,0 +1,50 @@
+1. MongoDB的安装还是很简单的，直接终端输入命令下载就可以：
+sudo apt-get install mongodb
+2. 安装完成后，在终端输入如下命令可以查询版本：
+mongo -version
+3. 气功和关闭命令如下：
+service mongodb start
+service mongodb stop
+4. 其中默认mongodb是随ubuntu启动自动启动的，输入如下命令 查看是否启动成功：
+parep mongo -l
+5. 卸载
+sudo apt-get – purge remove mongodb mongodb-clients mongodb-server
+使用MongoDB：
+shell命令模式
+输入 mongo 进入shell命令模式，默认链接的数据库是test数据库，
+数据库相关的常用操作命令：
+show dbs: 显示数据库列表
+show collections: 显示当前数据库中的集合(表)
+show users: 显示所有用户
+use yourname：切换当前的数据库到yourname
+db.help() 显示数据了操作命令
+db.nameCollection.help():显示集合操作命令，nameCollection是集合名字
+MongoDB没有创建数据库的命令，如果你想创建一个数据，可以先运行 use name 命令，之后做一些操作，使是数据库内有内容就能够创建成功了。
+1 . 切换到xx数据库
+use xx
+2. 创建Cokkection
+db.createCollection(‘name’) 创建一个名字为name的集合
+3.插入数据
+插入有两种 insert和save
+db.xx.insert({_id:1,sname:’zs’,sage:20})
+db.xx.save({_id:1,sname:’zs’,sage:22})
+其中的不同就是insert当id冲突时报错，而save则进行更新
+4. 查找数据
+db.nameCollection.find(查询条件,可选 ,筛选显示部分数据，如显示指定列数据,可选)
+db.xx.find() 查询所有记录 相当于select * from xx
+db.xx.find({sname:’li’}) 查询sname=’li’的记录，相当于select * xx where sname=’li’
+db.xx.find({},{sname:1,sage:1}) 查询制定列sname,sage数据.相当于select sname,sage from xx sname:1 便是返回sname列，默认_id字段也返回，可以添加_id:0 不反悔_id
+db.xx.find({sname:’zs’,sage:22}) and与条件查询 相当于select * from xx where sname =’zs’ and sage =22
+5 . 修改数据
+db.nameCollection.update(查询条件，update的对象和一些更新的操作符，: 如果不存在update的记录，是否插入objNew，true为插入，默认是false，不插入。
+multi: mongodb默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。默认false，只修改匹配到的第一条数据，)
+db.student.update({sname:’li’,{$set:{sage:30}},false,true) 相当于：
+update xx set sage=30 where sname =’li’
+6. 删除数据
+db.student.remove({sname:’cl’}) 相当于：
+delete from student where sname=’cl’
+7.退出shell命令模式
+输入exit 或者Ctrl+c 退出
+————————————————
+版权声明：本文为CSDN博主「Super_Sky_052」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_41188944/article/details/78867970

@@ -1,0 +1,30 @@
+table, th,tr,td {
+    border-color: brown;
+    border:5px solid green;
+}
+table.fancy1 {
+    border-spacing:10px 20px;
+    color: lavender;
+    background-color: indigo;
+}
+table.fancy2 {
+    border-spacing:10px;
+    color: lavender;
+    background-color: green;
+    border-style: dotted;
+    border-color:red;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+div#box {
+    padding: 20px;
+    margin-left: 15px;
+    border: red solid thin;
+    outline: dashed blue 1px;
+    background-color: brown;
+}
+p {
+    border-style: double;
+    border-color: burlywood;
+}

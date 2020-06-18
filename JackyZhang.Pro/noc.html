@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <! --- bootstrap --->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href="jquery-ui-1.12.1/jquery-ui.css"
+
+</head>
+
+<body>
+
+    <h3 class="cm-container text-center">NOC</h3>
+
+    <div class='container'>
+
+        <form class="needs-validation novalidate">
+
+            <div class="form-row" id='NOC'>
+                <div class="col-md-3 md-3">
+                    <label for="noc">NOC</label>
+                    <input type="text" class="form-control" name="noc" id="validationTooltip01" value="" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div  class="col-md-3 mb-3">
+                    <label for="province">Province</label>
+                    <input type="text" id='province' class="form-control" name="province" id="validationTooltip02" value="" required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="area">Area</label>
+                    <input type="text" class="form-control" name="area" id="validationTooltipUsername" value='' required>
+                    <div class="valid-tooltip">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-info btn-lg text-center"  type="submit">Search</button>
+        </form>
+
+        <div class="container" id="noc_details">
+            <ul>
+                <li><a href="#salary">Salary</a></li>
+                <li><a href="#title_list">Title list</a></li>
+                <li><a href="#main_duties">Main duties</a></li>
+                <li><a href="#employment_requirement">Employment requirements</a></li>
+                <li><a href="#additional_requirement">Additional requirements</a></li>
+            </ul>
+            
+            
+            <div class="" id="salary">
+                <p>Provincial median salary: </p>
+                <p>Local lowest salary:   </p>
+                <p>Local median salary:   </p>
+                <p>Local highest salary:   </p>
+            </div>
+            <div class="" id="title_list">
+                <p>title list.... </p>
+            </div>
+            <div class="" id="main_duties">
+                <p>main duties.... </p>
+            </div>
+            <div class="" id="employment_requirement">
+                <p>employment requirement.... </p>
+            </div>
+            <div class="" id="additional_requirement">
+                <p>additional requirement.... </p>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+       
+       $("#noc_details").tabs();
+       $("#province").autocomplete({source:['BC','AB','SK']});
+        
+
+    </script>
+</body>
+
+</html>

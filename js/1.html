@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo API call using jQuery</title>
+</head>
+<body>
+ 
+<div id="short"></div>
+---
+<div id="long"></div>
+ 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+/**
+ * Simple example of a jQuery JavaScript used to query an API.
+ *
+ * NOTE: This is a simple example with very little error handling.
+ * @license: http://data.gc.ca/eng/open-government-licence-canada
+ */
+(function( $ ) {
+    $(document).ready(function() {
+ 
+        // Shorthand method
+        $.getJSON('http://www.earthquakescanada.nrcan.gc.ca/api/earthquakes/', 
+            function(json) {
+                $('#short').append(json.metadata.request.name.en + '<br />');
+                $.each(json.latest, function(idx, item) {
+                    $('#short').append(idx + ' -> ' + item + '<br />');
+                });
+                return;
+            }
+        );
+ 
+        // Expanded method
+        $.ajax({
+            url: 'http://www.earthquakescanada.nrcan.gc.ca/api/earthquakes/',
+            dataType: 'json',
+            headers: { 
+                'Accept'          : 'application/json', 
+                'Accept-Language' : 'fr' 
+            },
+            crossDomain: true,
+            type: 'GET',
+            success: function(json) {                        
+                $('#long').append(json.metadata.request.name.fr + '<br />');
+                $.each(json.latest, function(idx, item) {
+                    $('#long').append(idx + ' -> ' + item + '<br />');
+                });
+                return;
+            },
+            error: function(req, status, error) {
+                $('#long').append(
+                    status.toString() + ': ' + 
+                    error.toString()
+                );
+                return;
+            },
+        });
+    });
+})( jQuery );
+</script>
+</body>
+</html>
