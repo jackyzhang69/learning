@@ -1,0 +1,110 @@
+{
+    "admin": {
+      "rcic_companyh": "Noah",
+      "job_offer": true,
+      "recruitment_summary": true,
+      "employer_training": true,
+      "submission_letter": true,
+      "job_advertisment": true
+    },
+    "lmia": {
+      "stream": "wp_pr",
+      "brief_benefit": "",
+      "benefit": "",
+      "other_benefit": "",
+      "who_current_fill": ""
+    },
+    "employer": {
+      "legal_name": "Noah Immigration",
+      "operating_name": "",
+      "establish_date": "",
+      "brief": "",
+      "business": "TITLE : PRA SCRIPT DEBUG( 31-07-2020 )\nLink : https://jsonformatter.org/json-pretty-print/2d454d\nDescription :\nTITLE : SOURCES1.JSON( 31-07-2020 )\nLink : https://jsonformatter.org/261537\nDescription :",
+      "why_hire": "",
+      "representative": "",
+      "rep_title": ""
+    },
+    "employee": {
+      "name": "",
+      "dob": "",
+      "sex": "",
+      "work_experience": "",
+      "education": "",
+      "competency": ""
+    },
+    "job_offer": {
+      "worklocation": {
+        "city": "Coquitlam",
+        "province": "BC",
+        "street": "1411 Garibaldi Pl",
+        "postcode": "V3E2S6"
+      },
+      "hours": 40,
+      "noc": "1123",
+      "rate": 29,
+      "title": "Marketing Specialist",
+      "offer_date": "2020-07-31",
+      "brief": "",
+      "duties": "",
+      "qualification": "",
+      "supervisor": "",
+      "supervisor_title": "",
+      "vacation_pay": "",
+      "median_wage": 28.85,
+      "area": ""
+    },
+    "finance": {
+      "last_year": 2019,
+      "ly_revenue": 485340,
+      "ly_income": 125000,
+      "ly_retained_earning": 25000,
+      "year_before_ly": 2018,
+      "ybl_revenue": 450000,
+      "ybl_income": 102000,
+      "ybl_retained_earning": 10000,
+      "good_status": true
+    },
+    "recruitment": {
+      "email": "",
+      "website": "www.unigenius.com",
+      "posts": 4,
+      "resumes": 34,
+      "canadians": 4,
+      "unknown": 25,
+      "foreigners": 5,
+      "interviewed": 4,
+      "how_did_you_find": "job ad",
+      "how_when_offer": "2007-04-01",
+      "job_ads": [
+        {
+          "start": "",
+          "end": "",
+          "media": "",
+          "days": 0,
+          "status": true
+        },
+        {
+          "start": "",
+          "end": "",
+          "media": "",
+          "days": 0,
+          "status": true
+        },
+        {
+          "start": "",
+          "end": "",
+          "media": "",
+          "days": 0,
+          "status": true
+        },
+        {
+          "start": "",
+          "end": "",
+          "media": "",
+          "days": 0,
+          "status": true
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,23 @@
+{
+    "job_offer": {
+        "address": {
+            "city": "Coquitlam",
+            "province": "BC",
+            "stree_num": "1411",
+            "street": "Garibaldi Pl",
+            "unit": "",
+            "zip": "V3E2S6"
+        },
+        "hours": 40.0,
+        "noc": "1123",
+        "rate": 28.0,
+        "title": "Marketing Specialist"
+    },
+    "recruitment": {
+        "job_ads": {
+            "end": "2020-07-31",
+            "media": "Jobbank",
+            "start": "2020-07-01"
+        }
+    }
+}

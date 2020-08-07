@@ -1,0 +1,109 @@
+﻿{
+  "admin": {
+    "rcic_companyh": "Noah",
+    "job_offer": true,
+    "recruitment_summary": true,
+    "employer_training": true,
+    "submission_letter": true,
+    "job_advertisment": true
+  },
+  "lmia": {
+    "stream": "wp_pr",
+    "brief_benefit": "",
+    "benefit": "",
+    "other_benefit": "",
+    "who_current_fill": ""
+  },
+  "employer": {
+    "legal_name": "Noah Immigration",
+    "operating_name": "",
+    "establish_date": "",
+    "brief": "",
+    "business": " Recruitment Summary\n  200119 Response/                 4 K    Media selection and advertisement du \n  200120 Recruitment/              4 K    ration\n  Raw/                             4 K    In order to precisely cover our targ \n  1 Submission Letter.pdf        223 K    et candidates, we seriously consider \n  2 ESDC-EMP5593-signed.pdf      3.1 M    ed the medias on which\n  3 Incorporation certificate.pd 2.3 M    the job advertisements will be poste \n  4  Business Licence 2019.pdf    31 K    d. Meanwhile, we also considered the \n  5 Proof of recruitment.pdf     1.3 M     geographical scope of\n  6 Recruitment Summary-signed.p 253 K    these medias, since we would like to \n  7 PD7A 1804-1906.pdf           202 K     recruit any possible candidates fro \n  8 T4 Summary.pdf                 2 M    m national wide, and we\n  9 T2 S100- 18 17.pdf           405 K    believe people with high skill would \n  10 T2 S125- 18 17.pdf          408 K     like to migrate to find a good job. \n  11 Job offer_signed.pdf        476 K     Therefore, all the medias           \n  12 Lease Agreement.pdf         5.7 M    are in the coverage of national wide \n  190713 Submission.pdf           16 M    .\n",
+    "why_hire": "",
+    "representative": "",
+    "rep_title": ""
+  },
+  "employee": {
+    "name": "",
+    "dob": "",
+    "sex": "",
+    "work_experience": "",
+    "education": "",
+    "competency": ""
+  },
+  "job_offer": {
+    "worklocation": {
+      "city": "Coquitlam",
+      "province": "BC",
+      "street": "1411 Garibaldi Pl",
+      "postcode": "V3E2S6"
+    },
+    "hours": 40,
+    "noc": "1123",
+    "rate": 29,
+    "title": "Marketing Specialist",
+    "offer_date": "2020-07-31",
+    "brief": "",
+    "duties": "",
+    "qualification": "",
+    "supervisor": "",
+    "supervisor_title": "",
+    "vacation_pay": "",
+    "median_wage": 28.85,
+    "area": ""
+  },
+  "finance": {
+    "last_year": 2019,
+    "ly_revenue": 485340,
+    "ly_income": 125000,
+    "ly_retained_earning": 25000,
+    "year_before_ly": 2018,
+    "ybl_revenue": 450000,
+    "ybl_income": 102000,
+    "ybl_retained_earning": 10000,
+    "good_status": true
+  },
+  "recruitment": {
+    "email": "",
+    "website": "www.unigenius.com",
+    "posts": 4,
+    "resumes": 34,
+    "canadians": 4,
+    "unknown": 25,
+    "foreigners": 5,
+    "interviewed": 4,
+    "how_did_you_find": "job ad",
+    "how_when_offer": "2007-04-01",
+    "job_ads": [
+      {
+        "start": "",
+        "end": "",
+        "media": "",
+        "days": 0,
+        "status": true
+      },
+      {
+        "start": "",
+        "end": "",
+        "media": "",
+        "days": 0,
+        "status": true
+      },
+      {
+        "start": "",
+        "end": "",
+        "media": "",
+        "days": 0,
+        "status": true
+      },
+      {
+        "start": "",
+        "end": "",
+        "media": "",
+        "days": 0,
+        "status": true
+      }
+    ]
+  }
+}
