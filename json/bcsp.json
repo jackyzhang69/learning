@@ -1,0 +1,12 @@
+{
+ "noc":"0114",
+ "hourly_rate":24,
+ "week_hours":40,
+ "working":true,
+ "one_year_CWE":false,
+ "year_we":5,
+ "area_index":28,
+ "education_index":0,
+ "educaton_bonus":2,
+ "clb":7
+}
