@@ -1,0 +1,2 @@
+RemarkName,NickName,Group,Type
+,Myself-Partner,True,partner

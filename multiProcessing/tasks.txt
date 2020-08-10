@@ -1,0 +1,6 @@
+module|day|week_month|hour|minute|second
+getBcpnpIta|1-4|week|08-20|*/10|00
+getBcpnpMR|1|month|08|00|00
+getOnIta|0-4|week|08-20|*/15|00
+getEeIta|0-4|week|08-20|*/10|00
+stillOn|0-4|week|0-6|0-23|*/20

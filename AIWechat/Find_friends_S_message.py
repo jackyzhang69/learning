@@ -1,84 +1,30 @@
 import itchat
-import time
-from datetime import datetime
 import pandas as pd 
+import time
 
-# find all my friends
-def allFriends():
-    friends=itchat.get_friends(update=True)  
+def getUser(rmk_name):
+    person=itchat.search_friends(remarkName=rmk_name )[0]
+    return person['UserName']
+        
+def getGroup(nick_name):
+    room=itchat.search_chatrooms(name=nick_name )[0]
+    return room['UserName']
 
-    print(f"There are {str(len(friends))} friends")
-    i=0
-    for friend in friends:
-        #print(f"{i} {friend['NickName']} {friend['UserName']}")
-        print(friend)
-        i+=1
-    return friends
+def send2Group(nick_name,message):
+    itchat.send(message,toUserName=getGroup(nick_name))
+    time.sleep(1)
 
+def send2User(remark_name,message):
+    itchat.send(message,toUserName=getUser(remark_name))
+    time.sleep(1)
 
+def send2AllinList(message):
+    df=pd.read_csv('/home/jacky/aiadvisor/learning/AIWechat/test_list.txt')
+    group_filt=(df['Group']==True)
+    Individual_filt=(df['Group']==False)
 
-def allGroups():
-    rooms = itchat.get_chatrooms(update=True)
-    print(f'There are {len(rooms)} wechat groups')
-    i=0
-    for room in rooms:
-        print(room['NickName'],room['UserName'])
-    
-    return rooms
-def send2groups(msg,remarkNames):
-    for remarkName in remarkNames:
-        group=itchat.search_chatrooms(name=remarkName)[0]
-        userName=group['UserName']
-        itchat.send(message,toUserName=userName)
+    df.loc[group_filt,'NickName'].apply(send2Group,message=message) # 目前微信群 只能用NickName搜索
+    df.loc[Individual_filt,'RemarkName'].apply(send2User,message=message)
 
-def send2indiduals(msg, individuals):
-    for individual in individuals:
-        person=itchat.search_friends(remarkName=individual )[0]
-        userName=person['UserName']
-        itchat.send(msg,toUserName=userName)
-
-def toTargets(message,target):
-
-    df=pd.read_csv('aiwechat\\send_list.txt')
-    print(df)
-
-    if target=='group':
-        groups=df['RemarkName'][df['Group']==True].to_list()
-        send2groups(message,groups)
-
-    elif target=='individual': 
-        individuals=df['RemarkName'][df['Group']==False].to_list()
-        send2indiduals(message,individuals)
-    elif target=='both':
-        groups=df['RemarkName'][df['Group']==True].to_list()
-        send2groups(message,groups)
-        individuals=df['RemarkName'][df['Group']==False].to_list()
-        send2indiduals(message,individuals)
-    else:
-        return 1
-
-print("scan the 2d code")
-#scan wechat 2d code and login
-itchat.auto_login(hotReload=True)
-
-# friend_remarkName=input("enter the name: ")
-message="Hi " +str(datetime.now())
-toTargets(message,'group')
-
-# Identify the friend with name: remarkName, return a list of friends
-# friends=friend_UserName=itchat.search_friends(remarkName=friend_remarkName)
-# i=input("Pick which friend by number: ")
-# Pick the matching friend
-# friend_UserName=friends[int(i)]['UserName']
-# send out the message
-# itchat.send_msg(msg=message,toUserName=friend_UserName)
-
-
-
-
-
-
-
-
-
-
+for i in range(10):
+    send2AllinList("hi")
